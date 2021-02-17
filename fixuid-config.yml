@@ -1,0 +1,10 @@
+# fixuid should change the owner UID of any file owned by www-data to the run-time user UID.
+user: node
+
+# fixuid should change the owner GID of any file owned by www-data to the run-time user GID.
+group: node
+
+# By default, fixuid will act from `/` which is a waste of up-time and resources.
+# Here we say the reassignment of the files should be done only on a sub-set of directories.
+path:
+  - /var/www
