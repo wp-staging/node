@@ -16,9 +16,6 @@ RUN curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.5/fixuid-0.
 COPY fixuid-config.yml /etc/fixuid/config.yml
 
 # Set up the entrypoint and set it as the default command.
-COPY wps-entrypoint.sh /wps-entrypoint.sh
-RUN chmod 755 /wps-entrypoint.sh
-CMD ["/wps-entrypoint.sh"]
-
-# Commands should run from this directory, by default.
-WORKDIR /var/www
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
+CMD ["/entrypoint.sh"]
